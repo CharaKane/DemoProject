@@ -1,0 +1,22 @@
+CREATE TABLE dept(
+ dept_no INT NOT NULL,
+ dname VARCHAR(45) NOT NULL,
+ loc VARCHAR(45) NOT NULL,
+ PRIMARY KEY (dept_no)
+)
+
+
+
+CREATE TABLE emp(
+ emp_no INT NOT NULL,
+ ename VARCHAR(45) NOT NULL,
+ job VARCHAR(45) NOT NULL,
+ mgr INT  NOT NULL,
+ hiredate DATE NOT NULL,
+ sal FLOAT NOT NULL,
+ comm FLOAT,
+ address VARCHAR(45) NOT NULL,
+ zip INT(5),
+ PRIMARY KEY (emp_no),
+ FOREIGN KEY (dept_no) REFERENCES dept (dept_no)
+)
